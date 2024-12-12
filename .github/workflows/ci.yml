@@ -43,6 +43,7 @@ jobs:
           echo "PGDATABASE=forum_api_test" >> .env
           echo "PGPASSWORD=Lalulilalala27" >> .env
           echo "PGPORT=5432" >> .env
+          
 
       - name: Wait for PostgreSQL to be ready
         run: |
@@ -50,6 +51,9 @@ jobs:
             echo "Waiting for database to be ready..."
             sleep 1
           done
+
+      - name: set Timezone to Jakarta
+        run: sudo timedatectl set-timezone Asia/Jakarta
 
       - name: Run database migrations
         run: npm run migrate:test
