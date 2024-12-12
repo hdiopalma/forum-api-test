@@ -3,7 +3,7 @@ name: CI for Forum API
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   test:
