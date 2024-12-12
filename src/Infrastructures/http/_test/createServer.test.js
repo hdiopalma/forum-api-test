@@ -56,7 +56,7 @@ describe("when GET /", () => {
   });
 });
 
-describe('Intentional Failure', () => {
+describe('Intentional Failure', () => { 
   it('should fail intentionally', async () => {
       const res = await request(app).get('/fail');
       expect(res.statusCode).toBe(500); 
